@@ -60,7 +60,7 @@ document.querySelectorAll("[data-count]").forEach((el) => countObserver.observe(
 
 // ===== Rotating hero title =====
 const roles = [
-  "Senior Technical Account Manager",
+  "Senior AI/ML Tech Lead",
   "AI / ML Expert",
   "Data & Analytics Leader",
   "Data Architecture Specialist",
