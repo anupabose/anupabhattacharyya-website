@@ -390,11 +390,116 @@ a.contact__card:hover { transform: translateY(-4px); border-color: var(--accent)
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .reveal.visible { opacity: 1; transform: none; }
 
+/* ===== Section lead + inline links ===== */
+.section__lead { color: var(--muted); max-width: 640px; margin-top: 1rem; }
+.inline-link { color: var(--accent); border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+.inline-link:hover { border-bottom-color: var(--accent); }
+
+/* ===== Selected Work ===== */
+.work { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+.work__card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s, border-color 0.25s;
+}
+.work__card:hover { transform: translateY(-4px); border-color: rgba(110,168,254,0.4); }
+.work__badge {
+  align-self: flex-start;
+  background: var(--accent-grad);
+  color: #0b0f1a;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+.work__card h3 { font-size: 1.2rem; margin-bottom: 0.7rem; }
+.work__card p { color: var(--muted); font-size: 0.94rem; }
+.work__metrics {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin: 1.25rem 0;
+}
+.work__metrics li { color: var(--muted); font-size: 0.85rem; }
+.work__metrics strong {
+  display: block;
+  font-family: var(--display);
+  font-size: 1.6rem;
+  background: var(--accent-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.work__link { margin-top: auto; color: var(--accent); font-weight: 600; font-size: 0.9rem; }
+.work__link:hover { text-decoration: underline; }
+
+/* ===== Publications ===== */
+.pub { margin-bottom: 2.5rem; }
+.pub:last-child { margin-bottom: 0; }
+.pub__sub { font-family: var(--display); font-size: 1.35rem; margin-bottom: 1.1rem; }
+.pub__mini { font-size: 0.95rem; color: var(--muted); margin: 1.4rem 0 0.9rem; font-weight: 600; }
+.pub__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+.pub__item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  transition: transform 0.2s, border-color 0.2s;
+}
+.pub__item:hover { transform: translateY(-3px); border-color: var(--accent); }
+.pub__src { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); font-weight: 600; }
+.pub__title { color: var(--text); font-size: 0.92rem; line-height: 1.4; }
+.pub__item--video { border-left: 3px solid #ff4d4d; }
+.pub__soon { color: var(--muted); font-style: italic; }
+
+/* ===== Repos ===== */
+.repos { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+.repo {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  transition: transform 0.2s, border-color 0.2s;
+}
+.repo:hover { transform: translateY(-3px); border-color: var(--accent); }
+.repo__owner { font-size: 0.78rem; color: var(--muted); }
+.repo__name { font-family: var(--display); font-size: 1.05rem; color: var(--accent); word-break: break-word; }
+.repo__desc { font-size: 0.88rem; color: var(--muted); }
+
+/* ===== Credly verify link ===== */
+.creds__verify {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 1px solid var(--accent);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  transition: background 0.2s, color 0.2s;
+}
+.creds__verify:hover { background: var(--accent); color: #0b0f1a; }
+
 /* ===== Responsive ===== */
 @media (max-width: 860px) {
   .about, .creds { grid-template-columns: 1fr; gap: 2rem; }
   .stats__grid { grid-template-columns: repeat(2, 1fr); }
   .contact__cards { grid-template-columns: repeat(2, 1fr); }
+  .work { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
   .nav__links {
